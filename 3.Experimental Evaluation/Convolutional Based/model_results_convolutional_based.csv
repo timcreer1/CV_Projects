@@ -1,0 +1,3 @@
+Model,Task,Accuracy
+ROCKET,Species Prediction,0.8558754603280884
+MiniRocket,Species Prediction,0.8295112152661533
