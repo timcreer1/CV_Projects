@@ -1,0 +1,4 @@
+Model,Task,Accuracy
+Time Series Forest (TSF),Species Prediction,0.8636591898225644
+Canonical Interval Forest (CIF),Species Prediction,0.9070974221627051
+Diverse Representation CIF (DrCIF),Species Prediction,0.9194844325410111
