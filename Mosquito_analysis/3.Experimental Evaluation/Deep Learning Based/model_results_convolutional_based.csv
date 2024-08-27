@@ -1,5 +1,0 @@
-Model,Task,Accuracy
-ResNet,Species Prediction,0.9556411114830934
-InceptionTime,Species Prediction,0.544944760629394
-FCN,Species Prediction,0.85780046869769
-Time-CNN,Species Prediction,0.5454469367258119

@@ -1,6 +1,0 @@
-Model,Task,Accuracy
-K-Nearest Neighbors (KNN),Species Prediction,0.8222296618680951
-Logistic Regression (LR),Species Prediction,0.9264312018747908
-Support Vector Machines (SVM),Species Prediction,0.9219953130231001
-Random Forest (RF),Species Prediction,0.8690157348510211
-XGBoost (XGB),Species Prediction,0.9196518245731503
