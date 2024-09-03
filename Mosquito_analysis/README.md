@@ -1,6 +1,6 @@
 # 🦟 Time Series Mining Approaches for Malaria Vector Prediction on Mid-Infrared Spectroscopy Data
 
-This project replicates a segment of a scientific research paper that investigates using mid-infrared spectroscopy (MIRS) data as input for efficient time series classification methods to predict the species and age of malaria mosquitoes.
+This project replicates a segment of a scientific research paper that investigates using mid-infrared spectroscopy (MIRS) data as input for efficient time series classification methods to predict the species of malaria mosquitoes.
 
 ## 🌐 Resources
 
