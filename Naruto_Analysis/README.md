@@ -1,6 +1,6 @@
 # 🍥 Naruto Project
 
-This project showcases a comprehensive approach to interacting with computer systems through hand gestures and explores various natural language processing and machine learning techniques applied to data from the Naruto series. It involves controlling a computer’s mouse and volume through hand gestures, scraping detailed Jutsu data, analyzing character relationships in Naruto subtitles, and building sophisticated theme and Jutsu classifiers.
+This project showcases a comprehensive analysis of data from the Naruto series using various natural language processing and machine learning techniques. The project involves web-scraping detailed Jutsu data, analysing character relationships in Naruto subtitles, and developing sophisticated classifiers for themes and Jutsu types.
 
 ## 📄 Overview
 
