@@ -1,6 +1,6 @@
 # 🛒 Black Friday Sales Analysis & Price Prediction
 
-This project provides a comprehensive analysis of Black Friday sales data, focusing on understanding purchasing behaviour and predicting purchase amounts using various machine learning and deep learning models. The project involves detailed exploratory data analysis, data preprocessing, and the development of regression, tree-based, and neural network models to predict sales, offering valuable insights into consumer behaviour during the Black Friday sales period.
+This project offers a comprehensive analysis of Black Friday sales data, employing machine learning and deep learning techniques to understand purchasing behaviour and predict purchase amounts. It includes detailed exploratory data analysis, data preprocessing, and the development of regression, tree-based, and neural network models, providing valuable insights into consumer behaviour during the Black Friday sales period.
 
 ## 📄 Overview
 
