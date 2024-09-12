@@ -12,9 +12,6 @@ from tqdm import tqdm
 # Import cleaned data
 df = pd.read_csv('/Users/creer/PycharmProjects/CV_Projects/.venv/Predicting Purchases BFS/Data/cleaned_data.csv')
 
-# Reducing the sample size and shuffling the data
-df = df.sample(frac=1).iloc[:10000]
-
 # Splitting data into features and target
 Reg_y = df['Purchase'].values
 Reg_X = df.drop('Purchase', axis=1).values
@@ -63,7 +60,7 @@ param_distributions = {
 scores = []
 for model_name, model in tqdm(models.items(), desc="Tuning Models"):
     rs = RandomizedSearchCV(
-        model, param_distributions[model_name], cv=5, n_jobs=-1, n_iter=10, verbose=1, random_state=30
+        model, param_distributions[model_name], cv=10, n_jobs=-1, n_iter=50, verbose=1, random_state=30
     )
     rs.fit(Reg_X_train, Reg_y_train)
     scores.append({
