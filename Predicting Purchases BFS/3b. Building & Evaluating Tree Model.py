@@ -16,9 +16,6 @@ import scipy.stats as stats
 # Import cleaned data
 df = pd.read_csv('/Users/creer/PycharmProjects/CV_Projects/.venv/Predicting Purchases BFS/Data/cleaned_data.csv')
 
-# Reducing the sample size and shuffling the data (uncomment if needed)
-df = df.sample(frac=1).iloc[:10000]
-
 # Preparing tree-based data and standardizing X values
 Tree_y = df['Purchase'].values
 Tree_X = scale(df.drop('Purchase', axis=1).values)  # Scaling features for improved performance
@@ -70,7 +67,7 @@ models = {
 scores = []
 for model_name, model in tqdm(models.items(), desc="Tuning Models"):
     rs = RandomizedSearchCV(
-        model, param_grid[model_name], cv=5, n_jobs=-1, n_iter=10, verbose=1, random_state=30
+        model, param_grid[model_name], cv=10, n_jobs=-1, n_iter=50, verbose=1, random_state=30
     )
     rs.fit(Tree_X_train, Tree_y_train)
     scores.append({
