@@ -1,7 +1,9 @@
 # Necessary imports
 import pandas as pd
 import numpy as np
+import seaborn as sns
 import time
+import scipy.stats as stats
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score, median_absolute_error, mean_squared_log_error
@@ -14,9 +16,6 @@ from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 
 # Import cleaned data
 df = pd.read_csv('/Users/creer/PycharmProjects/CV_Projects/.venv/Predicting Purchases BFS/Data/cleaned_data.csv')
-
-# Reducing the sample size and shuffling the data
-#df = df.sample(frac=1).iloc[:10000]
 
 # Split the data into training and test sets
 NN_y = df['Purchase'].values
@@ -42,14 +41,14 @@ model.add(Dense(1, activation='relu'))
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.002), loss='mean_squared_error')
 
 # Define callbacks for early stopping and learning rate reduction
-early_stop = EarlyStopping(monitor='val_loss', patience=50, restore_best_weights=True)
-reduce_lr = ReduceLROnPlateau(monitor='val_loss', patience=10, factor=0.6, verbose=1, mode='min', min_lr=0.0001)
+early_stop = EarlyStopping(monitor='val_loss', patience=100, restore_best_weights=True)
+reduce_lr = ReduceLROnPlateau(monitor='val_loss', patience=40, factor=0.6, verbose=1, mode='min', min_lr=0.00001)
 
 # Start timer
 start_time = time.time()
 
 # Train the model
-history = model.fit(NN_X_train, NN_y_train, epochs=100, batch_size=64,
+history = model.fit(NN_X_train, NN_y_train, epochs=500, batch_size=64,
                     validation_data=(NN_X_test, NN_y_test),
                     callbacks=[early_stop, reduce_lr])
 
@@ -114,14 +113,12 @@ plt.show()
 
 # 3. QQ Plot to Check Normality
 plt.figure(figsize=(8, 6))
-import scipy.stats as stats
 stats.probplot(NN_residuals, dist="norm", plot=plt)
 plt.title('QQ Plot of Residuals - Neural Network')
 plt.show()
 
 # 4. Residuals vs. Fitted Plot (Checking Homoscedasticity)
 plt.figure(figsize=(10, 6))
-import seaborn as sns
 sns.residplot(x=NN_y_pred, y=NN_residuals, lowess=True, line_kws={'color': 'red', 'lw': 1})
 plt.xlabel('Fitted Values')
 plt.ylabel('Residuals')
